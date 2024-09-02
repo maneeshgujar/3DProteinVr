@@ -1,13 +1,13 @@
-// import * as THREE from './libs/three/three.module.js';
-// // import { Stats } from './libs/stats.module.js';
-// import { OrbitControls } from './libs/three/jsm/OrbitControls.js';
-// import { BoxLineGeometry } from './libs/three/jsm/BoxLineGeometry.js';
-// import { VRButton } from './libs/three/jsm/VRButton.js';
+import * as THREE from './libs/three/three.module.js';
+// import { Stats } from './libs/stats.module.js';
+import { OrbitControls } from './libs/three/jsm/OrbitControls.js';
+import { BoxLineGeometry } from './libs/three/jsm/BoxLineGeometry.js';
+import { VRButton } from './libs/three/jsm/VRButton.js';
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
-import { BoxLineGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/geometries/BoxLineGeometry.js';
-import { VRButton } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/webxr/VRButton.js';
+// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.module.js';
+// import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/controls/OrbitControls.js';
+// import { BoxLineGeometry } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/geometries/BoxLineGeometry.js';
+// import { VRButton } from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/webxr/VRButton.js';
 // import Stats from 'https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/libs/stats.module.js';
 
 class App{
