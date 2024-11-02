@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1,user-scalable=0">
+
+        <meta name="description" content="ProteinVR Scene">
+        <meta name="author" content="DurrantLab">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="theme-color" content="#000000">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-title" content="ProteinVR">
+        <link rel="manifest" href="manifest.webmanifest">
+        <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+        <!-- Start getting css so it will be ready when you request it later. -->
+        <link rel="preload" href="pages/css/bootstrap.min.css" as="style">
+        <link rel="preload" href="pages/css/style.css" as="style">
+        <link rel="preload" href="style.css" as="style">
+
+        <link rel="preload" href="js/vuex.min.js" as="script">
+        <link href="js/vue.min.js" as="script">
+
+        <!-- Let browser know you might need google to set up a PWA. -->
+        <link rel="preconnect" href="https://storage.googleapis.com">
+
+        <title>ProteinVR</title>
+
+        <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            /* Below needs to be hear because you don't want to wait for the
+            js/css to load... */
+            html,
+            body {
+                overflow: hidden;
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-color: black;
+            }
+
+            #loadingContainer {
+                position: absolute;
+                width: 60px;
+                height: 60px;
+                top: 50%;
+                left: 50%;
+                margin-left: -30px;
+                margin-top: -30px;
+            }
+
+            #loadingContainer p {
+                display: block;
+                width: 100px;
+                color: white;
+                text-align: center;
+            }
+
+            #loading {
+                border: 16px solid #f3f3f3;
+                /* Light grey */
+                border-top: 16px solid #3498db;
+                /* Blue */
+                border-radius: 50%;
+                animation: spin 2s linear infinite;
+                width: 60px;
+                height: 60px;
+                margin-left:20px;
+            }
+
+            /* The vr button needs to be closer to the edge (to accomodate
+            small phones) */
+            .babylonVRicon {
+                bottom: 5px !important;
+                top: unset !important;
+                right: 5px !important;
+                left: unset !important;
+                opacity: 0;  /* Start off hidden */
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="loadingContainer">
+            <div id="loading"></div>
+            <p>Loading ProteinVR...</p>
+        </div>
+
+        <div id="vue-app"></div>
+
+        <div id="container">
+            <canvas id="renderCanvas" class="grab-icon" touch-action="none"></canvas>
+            <div id="capture-clicks" touch-action="none"></div>
+        </div>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.js"></script> -->
+        <script src="js/jsfile.6.webxr-polyfill.min.js"></script>
+        <script> var webXRPolyfill = new WebXRPolyfill(); </script>
+
+        <script src="js/jsfile.1.pep.min.js"></script>
+        <script src="js/peer.min.js" async></script>
+
+        <script src="js/vuex.min.js"></script>
+        <script src="js/vue.min.js"></script>
+        <!-- <script src="js/vue.js"></script> -->
+
+        <link rel="stylesheet" href="pages/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="pages/css/style.css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="runtime.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~fa72b964.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~fcc117f6.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~a177d8a4.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~536b79d4.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~f7ca46f6.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~e2cb4eb1.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~2e74ac08.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~88d07ad6.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~e35f40e9.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~20c91ea8.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~c30ef3c8.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~a5956ba0.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~9719ada8.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~b8723672.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~cbdff883.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~2a5c1e21.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~1c1c14d9.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~cb155afc.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~c75c0272.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~e158c51d.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~3efb25d1.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~b3266081.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~4a0d6d4e.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~d458706d.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~f7a59870.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~8bd50e33.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~4408dec5.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~69c628fc.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~efae9e2e.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~20b2e38c.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~d67ff00d.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~b87ce8f0.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~b87b3921.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~6b620129.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~30002f90.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~20ba8c24.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~2f6c1048.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~de27edb0.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~828ab70f.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~f0dd280a.64670adce7c395c84723.js"></script><script type="text/javascript" src="vendors~70aabc29.64670adce7c395c84723.js"></script><script type="text/javascript" src="app~21833f8f.64670adce7c395c84723.js"></script></body>
+</html>
